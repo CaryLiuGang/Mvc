@@ -18,6 +18,7 @@ namespace RoutingWebSite
             services
                 .AddMvc(options =>
                 {
+                    // Add route token transformer to one controller
                     options.Conventions.Add(new ControllerRouteTokenTransformerConvention(
                         typeof(ParameterTransformerController),
                         new TestParameterTransformer()));

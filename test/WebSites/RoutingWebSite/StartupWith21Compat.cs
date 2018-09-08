@@ -26,8 +26,9 @@ namespace RoutingWebSite
             services.AddScoped<TestResponseGenerator>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
+            // EndpointRoutingController is not compatible with old routing
+            // Remove its action to avoid errors
             var actionDescriptorProvider = new RemoveControllerActionDescriptorProvider(typeof(EndpointRoutingController));
-
             services.TryAddEnumerable(ServiceDescriptor.Singleton<IActionDescriptorProvider>(actionDescriptorProvider));
         }
 

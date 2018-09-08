@@ -36,21 +36,6 @@ namespace Microsoft.AspNetCore.Mvc.FunctionalTests
         [Fact]
         public abstract Task RouteData_Routers_AttributeRoute();
 
-        //[Fact]
-        //public async Task sdfsdf()
-        //{
-        //    // Arrange & Act
-        //    var response = await Client.GetAsync("http://localhost/Home/RouteWithParameters");
-
-        //    // Assert
-        //    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-
-        //    var body = await response.Content.ReadAsStringAsync();
-        //    var result = JsonConvert.DeserializeObject<bool>(body);
-
-        //    Assert.True(result);
-        //}
-
         // Verifies that components in the MVC pipeline can modify datatokens
         // without impacting any static data.
         //

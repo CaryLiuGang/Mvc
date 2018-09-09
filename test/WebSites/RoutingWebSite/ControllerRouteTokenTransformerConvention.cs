@@ -11,9 +11,9 @@ namespace RoutingWebSite
     public class ControllerRouteTokenTransformerConvention : IApplicationModelConvention
     {
         private readonly Type _controllerType;
-        private readonly ParameterTransformer _parameterTransformer;
+        private readonly IParameterTransformer _parameterTransformer;
 
-        public ControllerRouteTokenTransformerConvention(Type controllerType, ParameterTransformer parameterTransformer)
+        public ControllerRouteTokenTransformerConvention(Type controllerType, IParameterTransformer parameterTransformer)
         {
             if (parameterTransformer == null)
             {

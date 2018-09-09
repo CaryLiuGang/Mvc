@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Routing;
 
 namespace RoutingWebSite
 {
-    public class TestParameterTransformer : ParameterTransformer
+    public class TestParameterTransformer : IParameterTransformer
     {
-        public override string Transform(string value)
+        public string Transform(string value)
         {
             return "_" + value + "_";
         }

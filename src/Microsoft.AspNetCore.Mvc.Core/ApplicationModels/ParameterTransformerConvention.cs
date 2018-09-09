@@ -9,9 +9,9 @@ namespace Microsoft.AspNetCore.Mvc.Core.ApplicationModels
 {
     public sealed class RouteTokenTransformerConvention : IApplicationModelConvention
     {
-        private readonly ParameterTransformer _parameterTransformer;
+        private readonly IParameterTransformer _parameterTransformer;
 
-        public RouteTokenTransformerConvention(ParameterTransformer parameterTransformer)
+        public RouteTokenTransformerConvention(IParameterTransformer parameterTransformer)
         {
             if (parameterTransformer == null)
             {

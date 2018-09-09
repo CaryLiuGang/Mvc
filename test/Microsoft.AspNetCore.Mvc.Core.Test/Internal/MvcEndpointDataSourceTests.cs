@@ -727,9 +727,9 @@ namespace Microsoft.AspNetCore.Mvc.Internal
             return dataSource;
         }
 
-        private class UpperCaseParameterTransform : ParameterTransformer
+        private class UpperCaseParameterTransform : IParameterTransformer
         {
-            public override string Transform(string value)
+            public string Transform(string value)
             {
                 return value?.ToUpperInvariant();
             }

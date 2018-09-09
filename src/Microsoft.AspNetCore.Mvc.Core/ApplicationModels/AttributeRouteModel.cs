@@ -68,7 +68,7 @@ namespace Microsoft.AspNetCore.Mvc.ApplicationModels
 
         public bool IsAbsoluteTemplate => Template != null && IsOverridePattern(Template);
 
-        public ParameterTransformer RouteTokenTransformer { get; set; }
+        public IParameterTransformer RouteTokenTransformer { get; set; }
 
         /// <summary>
         /// Combines two <see cref="AttributeRouteModel"/> instances and returns
@@ -229,7 +229,7 @@ namespace Microsoft.AspNetCore.Mvc.ApplicationModels
             return ReplaceTokens(template, values, routeTokenTransformer: null);
         }
 
-        public static string ReplaceTokens(string template, IDictionary<string, string> values, ParameterTransformer routeTokenTransformer)
+        public static string ReplaceTokens(string template, IDictionary<string, string> values, IParameterTransformer routeTokenTransformer)
         {
             var builder = new StringBuilder();
             var state = TemplateParserState.Plaintext;

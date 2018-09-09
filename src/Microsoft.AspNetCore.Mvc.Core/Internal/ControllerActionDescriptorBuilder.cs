@@ -394,14 +394,14 @@ namespace Microsoft.AspNetCore.Mvc.Internal
                 actionDescriptor.AttributeRouteInfo.Template = AttributeRouteModel.ReplaceTokens(
                     actionDescriptor.AttributeRouteInfo.Template,
                     actionDescriptor.RouteValues,
-                    (ParameterTransformer)actionDescriptor.AttributeRouteInfo.RouteTokenTransformer);
+                    actionDescriptor.AttributeRouteInfo.RouteTokenTransformer);
 
                 if (actionDescriptor.AttributeRouteInfo.Name != null)
                 {
                     actionDescriptor.AttributeRouteInfo.Name = AttributeRouteModel.ReplaceTokens(
                         actionDescriptor.AttributeRouteInfo.Name,
                         actionDescriptor.RouteValues,
-                        (ParameterTransformer)actionDescriptor.AttributeRouteInfo.RouteTokenTransformer);
+                        actionDescriptor.AttributeRouteInfo.RouteTokenTransformer);
                 }
             }
             catch (InvalidOperationException ex)

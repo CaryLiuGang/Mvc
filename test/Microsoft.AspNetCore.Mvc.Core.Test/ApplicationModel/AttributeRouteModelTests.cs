@@ -669,9 +669,9 @@ namespace Microsoft.AspNetCore.Mvc.ApplicationModels
             };
         }
 
-        private class TestParameterTransformer : ParameterTransformer
+        private class TestParameterTransformer : IParameterTransformer
         {
-            public override string Transform(string value)
+            public string Transform(string value)
             {
                 return value;
             }

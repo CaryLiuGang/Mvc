@@ -45,6 +45,12 @@ namespace RoutingWebSite
                     constraints: new { controller = "DataTokens" },
                     dataTokens: new { hasDataTokens = true });
 
+                routes.MapRoute(
+                    "ConventionalTransformerRoute",
+                    "ConventionalTransformerRoute/{controller:test-transformer}/{action=Index}/{param:test-transformer?}",
+                    defaults: null,
+                    constraints: new { controller = "ConventionalTransformer" });
+
                 routes.MapAreaRoute(
                     "flightRoute",
                     "adminRoute",

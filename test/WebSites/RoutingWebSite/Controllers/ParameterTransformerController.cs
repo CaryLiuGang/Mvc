@@ -9,12 +9,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RoutingWebSite
 {
-    [Route("[controller]/[action]/{param?}", Name = "[controller]_[action]")]
+    [Route("[controller]/[action]", Name = "[controller]_[action]")]
     public class ParameterTransformerController : Controller
     {
+        private readonly TestResponseGenerator _generator;
+
+        public ParameterTransformerController(TestResponseGenerator generator)
+        {
+            _generator = generator;
+        }
+
         public IActionResult Test()
         {
-            return Ok(true);
+            return _generator.Generate("/_ParameterTransformer_/_Test_");
         }
     }
 }
